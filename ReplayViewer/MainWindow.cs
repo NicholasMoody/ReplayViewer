@@ -14,8 +14,7 @@ namespace ReplayViewer
     {
         List<Note> notes = new List<Note>();
         double currTime = 0;
-        double viewableRangeTime = 0.75;
-        double PPS = 1000; // pixels per second in chart display
+        double PPS = 1000; // pixels per second in chart display, essentially spacing between notes
 
         ChartData chart;
         public MainWindow()
@@ -43,10 +42,6 @@ namespace ReplayViewer
                     {
                         if (chart.NoteData[i].Note[j] == '1')
                         {
-                            /*e.Graphics.FillRectangle(Brushes.Red, 200 + (50 * j), 
-                                (int)((chart.NoteData[i].MSFromStart - currTime) * (DisplayRectangle.Height / viewableRangeTime)), 
-                                30, 15);*/
-
                             e.Graphics.FillRectangle(Brushes.Red, 200 + (50 * j),
                                 (int)((chart.NoteData[i].MSFromStart - currTime) * PPS),
                                 30, 15);
@@ -60,13 +55,19 @@ namespace ReplayViewer
         } 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            bool changed = true;
             if (e.KeyCode == Keys.Up)
-            {
                 currTime -= 0.15;
-            }
             else if (e.KeyCode == Keys.Down)
                 currTime += 0.15;
-            this.Invalidate();
+            else if (e.KeyCode == Keys.Oemplus)
+                PPS += 25;
+            else if (e.KeyCode == Keys.OemMinus)
+                PPS = PPS - 25 > 0 ? PPS - 25 : 0;
+            else
+                changed = false;
+            if (changed)
+                this.Invalidate();
         }
     }
 }
