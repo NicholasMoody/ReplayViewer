@@ -42,7 +42,15 @@ namespace ReplayViewer
                         note.Replace('2', '1');
                         if (note.Contains("1"))
                         {
-                            chart.NoteData.Add(new NoteInfo(note, time));
+                            for (int n = 0; n < 4; n++)
+                            {
+                                if (note[n] == '1')
+                                {
+                                    string isolatedNote = "000";
+                                    isolatedNote = isolatedNote.Insert(n, "1");
+                                    chart.NoteData.Add(new NoteInfo(isolatedNote, time));
+                                }
+                            }
                         }
                     }
 
