@@ -1,0 +1,10 @@
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.csprojAssemblyReference.cache
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.Properties.Resources.resources
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.csproj.GenerateResource.cache
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.csproj.CoreCompileInputs.cache
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\bin\Debug\ReplayViewer.exe.config
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\bin\Debug\ReplayViewer.exe
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\bin\Debug\ReplayViewer.pdb
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.exe
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.pdb
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.MainWindow.resources
