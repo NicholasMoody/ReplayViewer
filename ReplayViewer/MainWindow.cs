@@ -15,6 +15,8 @@ namespace ReplayViewer
         List<Note> notes = new List<Note>();
         double currTime = 0;
         double viewableRangeTime = 0.75;
+        double PPS = 1000; // pixels per second in chart display
+
         ChartData chart;
         public MainWindow()
         {
@@ -32,21 +34,28 @@ namespace ReplayViewer
         private void DrawNotes(object sender, PaintEventArgs e)
         {
             int i = 0;
-            while (chart.NoteData[i].MSFromStart < viewableRangeTime + currTime)
+            
+            while (chart.NoteData[i].MSFromStart < currTime + DisplayRectangle.Height / PPS)
             {
-                if (chart.NoteData[i].MSFromStart > currTime - viewableRangeTime)
+                if (chart.NoteData[i].MSFromStart > currTime - DisplayRectangle.Height / PPS)
                 {
                     for (int j = 0; j < 4; j++)
                     {
                         if (chart.NoteData[i].Note[j] == '1')
                         {
-                            e.Graphics.FillRectangle(Brushes.Red, 200 + (50 * j), 
+                            /*e.Graphics.FillRectangle(Brushes.Red, 200 + (50 * j), 
                                 (int)((chart.NoteData[i].MSFromStart - currTime) * (DisplayRectangle.Height / viewableRangeTime)), 
+                                30, 15);*/
+
+                            e.Graphics.FillRectangle(Brushes.Red, 200 + (50 * j),
+                                (int)((chart.NoteData[i].MSFromStart - currTime) * PPS),
                                 30, 15);
                         }
                     }
                 }
                 i++;
+                if (i >= chart.NoteData.Count)
+                    break;
             }
         } 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
