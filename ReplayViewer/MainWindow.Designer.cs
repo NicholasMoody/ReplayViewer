@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblTest = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTest
@@ -39,13 +40,23 @@
             this.lblTest.Size = new System.Drawing.Size(0, 13);
             this.lblTest.TabIndex = 0;
             // 
-            // Form1
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(13, 13);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(87, 13);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "Time: 0 Seconds";
+            // 
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblTest);
-            this.Name = "Form1";
+            this.Name = "MainWindow";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
@@ -56,6 +67,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblTest;
+        private System.Windows.Forms.Label lblTime;
     }
 }
 

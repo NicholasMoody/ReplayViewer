@@ -42,6 +42,8 @@ namespace ReplayViewer
                         note.Replace('2', '1');
                         if (note.Contains("1"))
                         {
+                            // notes in chords will occur at the same time in charts, but this won't be the case with replay data
+                            // thus, they should each be added as individual notes with the same time to differentiate them
                             for (int n = 0; n < 4; n++)
                             {
                                 if (note[n] == '1')
@@ -64,7 +66,8 @@ namespace ReplayViewer
                         currBPM = BPMs[1].BPM;
                         BPMs.RemoveAt(0);
                     }
-                    continue;
+
+                    continue; // once the notes have started, we do not need to run any of the code below
                 }
 
                 if (fileData[i].Contains("#BPMS:"))

@@ -13,9 +13,9 @@ namespace ReplayViewer
     public partial class MainWindow : Form
     {
         List<Note> notes = new List<Note>();
-        double currTime = 0;
-        double PPS = 1000; // pixels per second in chart display, essentially spacing between notes
-
+        double currTime = 15;
+        double PPS = 1000; // pixels per second in chart display, essentially the spacing between notes
+        int noteStartX = 250;
         ChartData chart;
         public MainWindow()
         {
@@ -26,15 +26,13 @@ namespace ReplayViewer
             double offset = chart.NoteData[0].MSFromStart;
             for (int i = 0; i < chart.NoteData.Count; i++)
                 chart.NoteData[i].MSFromStart -= offset;
-
+            this.MouseWheel += new MouseEventHandler(MouseScroll);
             this.Paint += this.DrawNotes;
         }
 
         private void DrawNotes(object sender, PaintEventArgs e)
-        {
-            int i = 0;
-            
-            while (chart.NoteData[i].MSFromStart < currTime + DisplayRectangle.Height / PPS)
+        {            
+            for (int i = 0; i < chart.NoteData.Count && chart.NoteData[i].MSFromStart < currTime + DisplayRectangle.Height / PPS; i++)
             {
                 if (chart.NoteData[i].MSFromStart > currTime - DisplayRectangle.Height / PPS)
                 {
@@ -42,15 +40,12 @@ namespace ReplayViewer
                     {
                         if (chart.NoteData[i].Note[j] == '1')
                         {
-                            e.Graphics.FillRectangle(Brushes.Red, 200 + (50 * j),
+                            e.Graphics.FillRectangle(Brushes.Red, noteStartX+ (50 * j),
                                 (int)((chart.NoteData[i].MSFromStart - currTime) * PPS),
                                 30, 15);
                         }
                     }
                 }
-                i++;
-                if (i >= chart.NoteData.Count)
-                    break;
             }
         } 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -67,7 +62,24 @@ namespace ReplayViewer
             else
                 changed = false;
             if (changed)
+            {
                 this.Invalidate();
+                lblTime.Text = $"Time: {Math.Round(currTime, 2)} seconds";
+            }
+                
         }
+
+        private void MouseScroll(object sender, MouseEventArgs e)
+        {
+            if (e.Delta > 0)
+                currTime -= 0.15;
+            else
+                currTime += 0.15;
+            if (currTime < 0)
+                currTime = 0;
+            this.Invalidate();
+            lblTime.Text = $"Time: {Math.Round(currTime, 2)} seconds";
+        }
+
     }
 }
