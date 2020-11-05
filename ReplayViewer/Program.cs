@@ -16,6 +16,7 @@ namespace ReplayViewer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ProfileViewer());
             Application.Run(new MainWindow());
         }
     }

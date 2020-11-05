@@ -31,7 +31,7 @@ namespace ReplayViewer
         }
 
         private void DrawNotes(object sender, PaintEventArgs e)
-        {            
+        {
             for (int i = 0; i < chart.NoteData.Count && chart.NoteData[i].MSFromStart < currTime + DisplayRectangle.Height / PPS; i++)
             {
                 if (chart.NoteData[i].MSFromStart > currTime - DisplayRectangle.Height / PPS)
@@ -40,7 +40,7 @@ namespace ReplayViewer
                     {
                         if (chart.NoteData[i].Note[j] == '1')
                         {
-                            e.Graphics.FillRectangle(Brushes.Red, noteStartX+ (50 * j),
+                            e.Graphics.FillRectangle(Brushes.Red, noteStartX + (50 * j),
                                 (int)((chart.NoteData[i].MSFromStart - currTime) * PPS),
                                 30, 15);
                         }
@@ -75,8 +75,10 @@ namespace ReplayViewer
                 currTime -= 0.15;
             else
                 currTime += 0.15;
+
             if (currTime < 0)
                 currTime = 0;
+
             this.Invalidate();
             lblTime.Text = $"Time: {Math.Round(currTime, 2)} seconds";
         }

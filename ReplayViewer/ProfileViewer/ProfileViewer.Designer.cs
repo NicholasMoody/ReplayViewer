@@ -1,0 +1,73 @@
+﻿namespace ReplayViewer
+{
+    partial class ProfileViewer
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lbScores = new System.Windows.Forms.ListBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
+            // 
+            // lbScores
+            // 
+            this.lbScores.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lbScores.FormattingEnabled = true;
+            this.lbScores.Location = new System.Drawing.Point(12, 57);
+            this.lbScores.Name = "lbScores";
+            this.lbScores.Size = new System.Drawing.Size(259, 381);
+            this.lbScores.TabIndex = 0;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txtSearch.Location = new System.Drawing.Point(289, 57);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(257, 20);
+            this.txtSearch.TabIndex = 1;
+            // 
+            // ProfileViewer
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.lbScores);
+            this.Name = "ProfileViewer";
+            this.Text = "ProfileViewer";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ListBox lbScores;
+        private System.Windows.Forms.TextBox txtSearch;
+    }
+}

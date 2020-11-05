@@ -8,3 +8,4 @@ C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\bin\Debug\ReplayViewer.pdb
 C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.exe
 C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.pdb
 C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.MainWindow.resources
+C:\Users\thelo\source\repos\ReplayViewer\ReplayViewer\obj\Debug\ReplayViewer.ProfileViewer.resources
