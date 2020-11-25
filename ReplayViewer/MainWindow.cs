@@ -38,9 +38,10 @@ namespace ReplayViewer
                 {
                     for (int j = 0; j < 4; j++)
                     {
+                        Brush b = (j == 0 || j == 3) ? Brushes.Red : Brushes.Blue;
                         if (chart.NoteData[i].Note[j] == '1')
                         {
-                            e.Graphics.FillRectangle(Brushes.Red, noteStartX + (50 * j),
+                            e.Graphics.FillRectangle(b, noteStartX + (50 * j),
                                 (int)((chart.NoteData[i].MSFromStart - currTime) * PPS),
                                 30, 15);
                         }
