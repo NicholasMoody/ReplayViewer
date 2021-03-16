@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReplayViewer.ProfileViewer
-{
-    class Score
-    {
-        public string SongTitle;
-        private string scoreKey;
-        private string date;
-        private double wifePct;
-        private int marvs;
-        private int perfs;
-        private int greats;
-        private int goods;
-        private int boos;
-        private int misses;
+namespace ReplayViewer {
+    class Score {
+        public string Wife;
+        public string Rate;
+        public string Marv;
+        public string Perf;
+        public string Great;
+        public string Good;
+        public string Boo;
+        public string Miss;
+        public Score() {
+
+        }
     }
 }

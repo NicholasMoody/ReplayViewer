@@ -38,7 +38,7 @@ namespace ReplayViewer
                 {
                     for (int j = 0; j < 4; j++)
                     {
-                        Brush b = (j == 0 || j == 3) ? Brushes.Red : Brushes.Blue;
+                        Brush b = (j == 0 || j == 3) ? Brushes.Red : Brushes.Blue; // column colors
                         if (chart.NoteData[i].Note[j] == '1')
                         {
                             e.Graphics.FillRectangle(b, noteStartX + (50 * j),

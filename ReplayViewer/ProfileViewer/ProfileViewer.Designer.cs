@@ -30,6 +30,7 @@
         {
             this.lbScores = new System.Windows.Forms.ListBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtTesting = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbScores
@@ -51,11 +52,21 @@
             this.txtSearch.Size = new System.Drawing.Size(257, 20);
             this.txtSearch.TabIndex = 1;
             // 
+            // txtTesting
+            // 
+            this.txtTesting.Location = new System.Drawing.Point(289, 83);
+            this.txtTesting.Multiline = true;
+            this.txtTesting.Name = "txtTesting";
+            this.txtTesting.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtTesting.Size = new System.Drawing.Size(499, 355);
+            this.txtTesting.TabIndex = 2;
+            // 
             // ProfileViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTesting);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lbScores);
             this.Name = "ProfileViewer";
@@ -69,5 +80,6 @@
 
         private System.Windows.Forms.ListBox lbScores;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtTesting;
     }
 }
