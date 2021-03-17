@@ -38,7 +38,7 @@ namespace ReplayViewer {
                                 s.Valid = sAttr.InnerText == "1";
                             }
                             else if (sAttr.Name == "DateTime") {
-                                s.Date = sAttr.InnerText.Split(' ')[0];
+                                s.Date = sAttr.InnerText.Split(' ')[0]; // extract only date, excluding time
                             }
                             else if (sAttr.Name == "SkillsetSSRs") {
                                 XmlNodeList skillsetsXml = sAttr.ChildNodes;
@@ -64,24 +64,18 @@ namespace ReplayViewer {
                             else if (sAttr.Name == "TapNoteScores") {
                                 XmlNodeList tapNoteXml = sAttr.ChildNodes;
                                 foreach (XmlNode tapNode in tapNoteXml) {
-                                    if (tapNode.Name == "W1") {
+                                    if (tapNode.Name == "W1") 
                                         s.Marv = double.Parse(tapNode.InnerText);
-                                    }
-                                    else if (tapNode.Name == "W2") {
+                                    else if (tapNode.Name == "W2") 
                                         s.Perf = double.Parse(tapNode.InnerText);
-                                    }
-                                    else if (tapNode.Name == "W3") {
+                                    else if (tapNode.Name == "W3") 
                                         s.Great = double.Parse(tapNode.InnerText);
-                                    }
-                                    else if (tapNode.Name == "W4") {
+                                    else if (tapNode.Name == "W4")
                                         s.Good = double.Parse(tapNode.InnerText);
-                                    }
-                                    else if (tapNode.Name == "W5") {
+                                    else if (tapNode.Name == "W5") 
                                         s.Boo = double.Parse(tapNode.InnerText);
-                                    }
-                                    else if (tapNode.Name == "Miss") {
+                                    else if (tapNode.Name == "Miss") 
                                         s.Miss = double.Parse(tapNode.InnerText);
-                                    }
                                 }
                             }
                         }
